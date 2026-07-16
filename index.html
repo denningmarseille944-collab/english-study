@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌟 六年级英语暑假自学手册（完整版）| Grade 6 English Summer Study Guide</title>
+<style>
+  :root {
+    --primary: #FF6B6B;
+    --secondary: #4ECDC4;
+    --accent: #FFE66D;
+    --purple: #A78BFA;
+    --green: #6EE7B7;
+    --orange: #FCA5A5;
+    --bg: #FFF9F0;
+    --card-bg: #FFFFFF;
+    --text: #2D3748;
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  /* Header */
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    animation: pulse 4s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+  .hero h1 { font-size: 2.2em; margin-bottom: 8px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+  .hero p { font-size: 1.1em; opacity: 0.9; }
+  .hero .emoji-row { font-size: 2em; margin: 10px 0; letter-spacing: 8px; }
+
+  /* Navigation */
+  .nav-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 16px 20px;
+    background: white;
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-tabs::-webkit-scrollbar { height: 4px; }
+  .nav-tabs::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 2px; }
+  .tab-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.3s;
+    background: #f0f0f0;
+    color: #666;
+  }
+  .tab-btn.active, .tab-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .tab-btn:nth-child(1).active { background: var(--primary); color: white; }
+  .tab-btn:nth-child(2).active { background: var(--secondary); color: white; }
+  .tab-btn:nth-child(3).active { background: var(--accent); color: #333; }
+  .tab-btn:nth-child(4).active { background: var(--purple); color: white; }
+  .tab-btn:nth-child(5).active { background: var(--green); color: #333; }
+
+  /* Sections */
+  .section { display: none; padding: 20px; max-width: 900px; margin: 0 auto; }
+  .section.active { display: block; }
+
+  /* Progress Bar */
+  .progress-overview {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+  .progress-overview h2 { color: var(--purple); margin-bottom: 12px; }
+  .big-progress {
+    background: #f0f0f0;
+    border-radius: 50px;
+    height: 30px;
+    position: relative;
+    overflow: hidden;
+    margin: 10px 0;
+  }
+  .big-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2, #FF6B6B);
+    border-radius: 50px;
+    transition: width 0.5s ease;
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite linear;
+  }
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  .progress-text { font-size: 1.3em; font-weight: bold; color: var(--purple); }
+  .stars-display { font-size: 1.8em; margin: 8px 0; }
+
+  /* Week Cards */
+  .week-card {
+    background: white;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .week-header {
+    padding: 16px 20px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .week-1 .week-header { background: linear-gradient(135deg, #FF6B6B, #FF8E8E); }
+  .week-2 .week-header { background: linear-gradient(135deg, #4ECDC4, #6BE5DE); }
+  .week-3 .week-header { background: linear-gradient(135deg, #A78BFA, #C4B5FD); }
+  .week-4 .week-header { background: linear-gradient(135deg, #FCA5A5, #FBBF24); }
+  .week-5 .week-header { background: linear-gradient(135deg, #6EE7B7, #34D399); }
+  .week-days { padding: 16px; }
+
+  /* Day Tasks */
+  .day-task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    background: #f8f9fa;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .day-task:hover { background: #f0f0f0; transform: translateX(4px); }
+  .day-task.completed { background: #d4edda; }
+  .day-task.completed .task-text { text-decoration: line-through; color: #888; }
+  .day-check {
+    width: 28px;
+    height: 28px;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85em;
+    flex-shrink: 0;
+    transition: all 0.3s;
+    background: white;
+  }
+  .day-task.completed .day-check {
+    background: #28a745;
+    border-color: #28a745;
+    color: white;
+  }
+  .day-label {
+    font-weight: bold;
+    font-size: 0.85em;
+    color: #888;
+    flex-shrink: 0;
+    width: 60px;
+  }
+  .task-text { flex: 1; font-size: 0.95em; }
+  .task-emoji { font-size: 1.2em; flex-shrink: 0; }
+  .week-progress-bar {
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    margin: 12px 14px 4px;
+    overflow: hidden;
+  }
+  .week-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary), var(--green));
+    border-radius: 4px;
+    transition: width 0.5s;
+  }
+  .week-progress-text { text-align: center; font-size: 0.8em; color: #888; padding-bottom: 8px; }
+
+  /* Word Cards */
+  .unit-section {
+    margin-bottom: 30px;
+  }
+  .unit-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 16px;
+    padding: 12px 20px;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .unit-1-title { background: linear-gradient(135deg, #FF6B6B, #FF8E8E); }
+  .unit-2-title { background: linear-gradient(135deg, #4ECDC4, #6BE5DE); }
+  .unit-3-title { background: linear-gradient(135deg, #A78BFA, #C4B5FD); }
+  .unit-5-title { background: linear-gradient(135deg, #6EE7B7, #059669); }
+
+  .words-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 14px;
+  }
+  .word-card {
+    height: 110px;
+    perspective: 600px;
+    cursor: pointer;
+  }
+  .word-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  .word-card.flipped .word-card-inner {
+    transform: rotateY(180deg);
+  }
+  .word-front, .word-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .word-front {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+  }
+  .word-back {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .word-en { font-size: 1.15em; font-weight: bold; }
+  .word-phonetic { font-size: 0.75em; opacity: 0.8; margin: 4px 0; }
+  .word-cn { font-size: 1.2em; font-weight: bold; }
+  .word-hint { font-size: 0.75em; opacity: 0.85; margin-top: 4px; }
+  .flip-hint { font-size: 0.7em; opacity: 0.7; margin-top: 6px; }
+
+  /* Sentences */
+  .sentences-grid {
+    display: grid;
+    gap: 16px;
+  }
+  .sentence-card {
+    background: white;
+    border-radius: 16px;
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary);
+    transition: transform 0.2s;
+  }
+  .sentence-card:hover { transform: translateX(6px); }
+  .sentence-card:nth-child(2) { border-color: var(--secondary); }
+  .sentence-card:nth-child(3) { border-color: var(--purple); }
+  .sentence-card:nth-child(4) { border-color: var(--accent); }
+  .sentence-card:nth-child(5) { border-color: var(--green); }
+  .sentence-en { font-size: 1.05em; font-weight: 600; color: #333; margin-bottom: 6px; }
+  .sentence-cn { font-size: 0.95em; color: #666; }
+  .sentence-example { font-size: 0.88em; color: #888; margin-top: 8px; font-style: italic; }
+
+  /* Section titles */
+  .section-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--text);
+  }
+  .section-subtitle {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #555;
+    margin: 20px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Badges */
+  .badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    background: #f0f0f0;
+    color: #666;
+    transition: all 0.3s;
+  }
+  .badge.earned {
+    background: linear-gradient(135deg, var(--accent), #FCA5A5);
+    color: #333;
+    box-shadow: 0 2px 8px rgba(255,200,0,0.4);
+  }
+
+  /* Modal / Achievement toast */
+  .toast {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s;
+    z-index: 1000;
+    max-width: 280px;
+    font-size: 0.95em;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Mascot */
+  .mascot {
+    font-size: 3em;
+    display: block;
+    text-align: center;
+    animation: bounce 2s infinite;
+    margin: 10px 0;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.6em; }
+    .words-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav-tabs { gap: 6px; }
+    .tab-btn { padding: 8px 12px; font-size: 0.82em; }
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 30px;
+    color: #999;
+    font-size: 0.85em;
+  }
+
+  /* Reset button */
+  .danger-btn {
+    background: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: all 0.2s;
+  }
+  .danger-btn:hover { background: #fca5a5; }
+
+  /* ===== QUIZ SECTION ===== */
+  #section-quiz { padding: 20px; max-width: 900px; margin: 0 auto; }
+  .quiz-unit-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .quiz-unit-btn {
+    padding: 10px 20px; border: none; border-radius: 25px; cursor: pointer;
+    font-size: 0.9em; font-weight: 700; background: #e9ecef; color: #555;
+    transition: all 0.3s;
+  }
+  .quiz-unit-btn.active { background: linear-gradient(135deg,#667eea,#764ba2); color: white; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(102,126,234,0.4); }
+  .quiz-unit-btn:hover:not(.active) { background: #dee2e6; transform: translateY(-1px); }
+
+  .quiz-unit-panel { display: none; }
+  .quiz-unit-panel.active { display: block; }
+
+  .quiz-block { background: white; border-radius: 20px; padding: 22px; margin-bottom: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+  .quiz-block-title { font-size: 1.1em; font-weight: 800; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; display: flex; align-items: center; gap: 8px; }
+  .quiz-block-title.mc { color: #667eea; border-color: #c7d2fe; }
+  .quiz-block-title.fb { color: #059669; border-color: #a7f3d0; }
+  .quiz-block-title.rearr { color: #d97706; border-color: #fde68a; }
+
+  .quiz-q { margin-bottom: 20px; }
+  .quiz-q-text { font-size: 0.97em; font-weight: 600; margin-bottom: 10px; color: #374151; line-height: 1.6; }
+  .quiz-q-num { display: inline-block; background: #667eea; color: white; border-radius: 50%; width: 24px; height: 24px; text-align: center; line-height: 24px; font-size: 0.82em; margin-right: 6px; flex-shrink: 0; }
+
+  .mc-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  @media(max-width:480px){ .mc-options { grid-template-columns: 1fr; } }
+  .mc-option {
+    padding: 10px 14px; border: 2px solid #e5e7eb; border-radius: 12px;
+    cursor: pointer; font-size: 0.9em; transition: all 0.2s; background: #fafafa;
+    user-select: none;
+  }
+  .mc-option:hover:not(.disabled) { border-color: #667eea; background: #eef2ff; }
+  .mc-option.selected { border-color: #667eea; background: #eef2ff; font-weight: 600; }
+  .mc-option.correct { border-color: #059669; background: #d1fae5; color: #065f46; font-weight: 700; }
+  .mc-option.wrong { border-color: #dc2626; background: #fee2e2; color: #991b1b; }
+  .mc-option.disabled { cursor: not-allowed; opacity: 0.75; }
+
+  .fb-wordbank { background: #f0fdf4; border-radius: 10px; padding: 10px 14px; margin-bottom: 12px; font-size: 0.87em; color: #15803d; }
+  .fb-wordbank strong { display: block; margin-bottom: 4px; }
+  .fb-input-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+  .fb-input {
+    border: 2px solid #d1d5db; border-radius: 10px; padding: 8px 12px;
+    font-size: 0.95em; width: 180px; outline: none; transition: border 0.2s;
+    font-family: inherit;
+  }
+  .fb-input:focus { border-color: #667eea; }
+  .fb-input.correct { border-color: #059669; background: #d1fae5; color: #065f46; }
+  .fb-input.wrong { border-color: #dc2626; background: #fee2e2; color: #991b1b; }
+  .fb-input.disabled { cursor: not-allowed; }
+
+  .rearr-words { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; min-height: 44px; }
+  .rearr-word {
+    padding: 8px 14px; background: linear-gradient(135deg,#667eea,#764ba2); color: white;
+    border-radius: 20px; cursor: pointer; font-size: 0.9em; font-weight: 600;
+    user-select: none; transition: all 0.2s; border: none;
+  }
+  .rearr-word:hover:not(.used):not(.disabled) { transform: scale(1.06); box-shadow: 0 3px 10px rgba(102,126,234,0.4); }
+  .rearr-word.used { opacity: 0.3; cursor: not-allowed; }
+  .rearr-word.disabled { cursor: default; }
+  .rearr-answer-area {
+    min-height: 44px; border: 2px dashed #d1d5db; border-radius: 12px; padding: 8px 12px;
+    margin-bottom: 8px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+    background: #f9fafb; cursor: pointer;
+  }
+  .rearr-answer-area.correct-bg { border-color: #059669; background: #d1fae5; }
+  .rearr-answer-area.wrong-bg { border-color: #dc2626; background: #fee2e2; }
+  .rearr-placed {
+    padding: 6px 12px; background: #667eea; color: white; border-radius: 16px;
+    font-size: 0.88em; font-weight: 600; cursor: pointer; transition: all 0.2s;
+  }
+  .rearr-placed:hover:not(.disabled) { background: #4f46e5; }
+  .rearr-placed.disabled { cursor: default; }
+  .rearr-hint { font-size: 0.82em; color: #6b7280; }
+
+  .quiz-submit-btn {
+    margin-top: 18px; padding: 13px 32px; background: linear-gradient(135deg,#667eea,#764ba2);
+    color: white; border: none; border-radius: 25px; font-size: 1em; font-weight: 700;
+    cursor: pointer; transition: all 0.3s; display: block; width: 100%;
+  }
+  .quiz-submit-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(102,126,234,0.4); }
+  .quiz-submit-btn:disabled { background: #9ca3af; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  .quiz-result-bar { margin-top: 20px; background: #f3f4f6; border-radius: 16px; padding: 18px 20px; display: none; }
+  .quiz-result-bar.show { display: block; }
+  .quiz-score-text { font-size: 1.3em; font-weight: 800; text-align: center; margin-bottom: 8px; }
+  .quiz-score-text .score-num { color: #667eea; font-size: 1.4em; }
+  .quiz-highscore { font-size: 0.88em; color: #6b7280; text-align: center; margin-bottom: 10px; }
+  .quiz-progress-bar { height: 14px; background: #e5e7eb; border-radius: 20px; overflow: hidden; }
+  .quiz-progress-fill { height: 100%; background: linear-gradient(90deg,#667eea,#10b981); border-radius: 20px; transition: width 0.6s ease; }
+  .quiz-retry-btn {
+    display: block; margin: 14px auto 0; padding: 10px 28px; background: white;
+    border: 2px solid #667eea; color: #667eea; border-radius: 20px; font-weight: 700;
+    cursor: pointer; font-size: 0.95em; transition: all 0.2s;
+  }
+  .quiz-retry-btn:hover { background: #667eea; color: white; }
+
+  .wrongbook-section { background: white; border-radius: 20px; padding: 22px; margin-bottom: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+  .wrongbook-title { font-size: 1.1em; font-weight: 800; color: #dc2626; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .wrongbook-empty { color: #9ca3af; font-style: italic; text-align: center; padding: 20px 0; }
+  .wrongbook-item { background: #fff7f7; border: 1px solid #fecaca; border-radius: 12px; padding: 12px 16px; margin-bottom: 10px; font-size: 0.9em; }
+  .wrongbook-item .wb-unit { font-size: 0.78em; color: #dc2626; font-weight: 700; margin-bottom: 4px; }
+  .wrongbook-item .wb-q { color: #374151; margin-bottom: 4px; }
+  .wrongbook-item .wb-correct { color: #059669; font-weight: 600; }
+  .wrongbook-clear-btn { display: block; margin: 0 auto; padding: 8px 22px; background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; border-radius: 14px; cursor: pointer; font-size: 0.87em; font-weight: 600; transition: all 0.2s; }
+  .wrongbook-clear-btn:hover { background: #fca5a5; }
+
+  .tab-btn:nth-child(6).active { background: #667eea; color: white; }
+</style>
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="emoji-row">📚 ☀️ ✏️ 🌟 🎉</div>
+  <h1>六年级英语暑假自学手册</h1>
+  <p>Grade 6 English Summer Self-Study Guide</p>
+  <p style="margin-top:8px;font-size:0.9em;opacity:0.8;">5周35天 · 坚持就是胜利！Keep Going! 💪</p>
+</div>
+
+<div class="nav-tabs">
+  <button class="tab-btn active" onclick="showSection('progress')">📊 进度</button>
+  <button class="tab-btn" onclick="showSection('tasks')">✅ 每日任务</button>
+  <button class="tab-btn" onclick="showSection('words')">🃏 单词卡片</button>
+  <button class="tab-btn" onclick="showSection('sentences')">💬 核心句型</button>
+  <button class="tab-btn" onclick="showSection('tips')">💡 学习小贴士</button>
+  <button class="tab-btn" onclick="showSection('quiz')">🧪 题库练习</button>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<!-- SECTION: Progress -->
+<div id="section-progress" class="section active">
+  <div class="progress-overview">
+    <span class="mascot">🦉</span>
+    <h2>我的学习进度 My Progress</h2>
+    <div class="big-progress">
+      <div class="big-progress-bar" id="main-progress-bar" style="width:0%"></div>
+    </div>
+    <div class="progress-text">已完成 <span id="done-count">0</span> / 35 天</div>
+    <div class="stars-display" id="stars-display">⭐ 加油！</div>
+    <p style="color:#888;font-size:0.85em;margin-top:8px;">点击"每日任务"打卡，这里自动更新！<br>Click the Tasks tab to check off daily tasks!</p>
+  </div>
+
+  <div style="background:white;border-radius:20px;padding:20px;margin-bottom:20px;box-shadow:var(--shadow);">
+    <h3 style="margin-bottom:16px;color:var(--purple);">🏅 我的勋章 My Badges</h3>
+    <div class="badges-row" id="badges-container">
+      <div class="badge" id="badge-week1" data-threshold="7">🏖️ 第1周完成</div>
+      <div class="badge" id="badge-week2" data-threshold="14">🚑 第2周完成</div>
+      <div class="badge" id="badge-week3" data-threshold="21">🚂 第3周完成</div>
+      <div class="badge" id="badge-week4" data-threshold="28">📖 第4周完成</div>
+      <div class="badge" id="badge-week5" data-threshold="35">🏆 全部完成!</div>
+      <div class="badge" id="badge-half">🌟 完成一半</div>
+      <div class="badge" id="badge-perfect">💯 满分选手</div>
+    </div>
+  </div>
+
+  <div style="background:white;border-radius:20px;padding:20px;box-shadow:var(--shadow);text-align:center;">
+    <h3 style="color:#dc2626;margin-bottom:12px;">⚙️ 设置</h3>
+    <button class="danger-btn" onclick="confirmReset()">🔄 重置所有进度 Reset All Progress</button>
+    <p style="color:#999;font-size:0.8em;margin-top:8px;">进度保存在本地浏览器中 / Progress saved in local browser</p>
+  </div>
+</div>
+
+<!-- SECTION: Tasks -->
+<div id="section-tasks" class="section">
+  <div class="section-title">✅ 5周每日任务清单 / 5-Week Daily Task List</div>
+
+  <!-- Week 1 -->
+  <div class="week-card week-1">
+    <div class="week-header">🏖️ 第1周 Week 1 — Unit 1: 暑假故事 Summer Vacation Stories</div>
+    <div class="week-days">
+      <div class="week-progress-bar"><div class="week-progress-fill" id="w1-bar" style="width:0%"></div></div>
+      <div class="week-progress-text" id="w1-text">0/7 完成</div>
+      <div class="day-task" id="task-1-1" onclick="toggleTask('1-1')">
+        <div class="day-check" id="check-1-1">✓</div>
+        <div class="day-label">Day 1</div>
+        <div class="task-text"><strong>学Unit1单词20个</strong><br>Study 20 Unit 1 vocabulary words</div>
+        <div class="task-emoji">📝</div>
+      </div>
+      <div class="day-task" id="task-1-2" onclick="toggleTask('1-2')">
+        <div class="day-check" id="check-1-2">✓</div>
+        <div class="day-label">Day 2</div>
+        <div class="task-text"><strong>跟读Lesson1对话</strong><br>Read aloud Lesson 1 dialogue</div>
+        <div class="task-emoji">🗣️</div>
+      </div>
+      <div class="day-task" id="task-1-3" onclick="toggleTask('1-3')">
+        <div class="day-check" id="check-1-3">✓</div>
+        <div class="day-label">Day 3</div>
+        <div class="task-text"><strong>跟读Lesson2对话</strong><br>Read aloud Lesson 2 dialogue</div>
+        <div class="task-emoji">🎤</div>
+      </div>
+      <div class="day-task" id="task-1-4" onclick="toggleTask('1-4')">
+        <div class="day-check" id="check-1-4">✓</div>
+        <div class="day-label">Day 4</div>
+        <div class="task-text"><strong>阅读Guoguo暑假日记</strong><br>Read Guoguo's summer vacation diary</div>
+        <div class="task-emoji">📖</div>
+      </div>
+      <div class="day-task" id="task-1-5" onclick="toggleTask('1-5')">
+        <div class="day-check" id="check-1-5">✓</div>
+        <div class="day-label">Day 5</div>
+        <div class="task-text"><strong>句型练习：写一封邮件</strong><br>Practice sentence patterns: write an email</div>
+        <div class="task-emoji">✉️</div>
+      </div>
+      <div class="day-task" id="task-1-6" onclick="toggleTask('1-6')">
+        <div class="day-check" id="check-1-6">✓</div>
+        <div class="day-label">Day 6</div>
+        <div class="task-text"><strong>角色扮演对话</strong><br>Role-play dialogue with a partner</div>
+        <div class="task-emoji">🎭</div>
+      </div>
+      <div class="day-task" id="task-1-7" onclick="toggleTask('1-7')">
+        <div class="day-check" id="check-1-7">✓</div>
+        <div class="day-label">Day 7</div>
+        <div class="task-text"><strong>第1周周测试</strong><br>Week 1 review test</div>
+        <div class="task-emoji">📋</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 2 -->
+  <div class="week-card week-2">
+    <div class="week-header">🚑 第2周 Week 2 — Unit 2: 安全与健康 Safety & Health</div>
+    <div class="week-days">
+      <div class="week-progress-bar"><div class="week-progress-fill" id="w2-bar" style="width:0%"></div></div>
+      <div class="week-progress-text" id="w2-text">0/7 完成</div>
+      <div class="day-task" id="task-2-1" onclick="toggleTask('2-1')">
+        <div class="day-check" id="check-2-1">✓</div>
+        <div class="day-label">Day 1</div>
+        <div class="task-text"><strong>学Unit2单词</strong><br>Study Unit 2 vocabulary words</div>
+        <div class="task-emoji">📝</div>
+      </div>
+      <div class="day-task" id="task-2-2" onclick="toggleTask('2-2')">
+        <div class="day-check" id="check-2-2">✓</div>
+        <div class="day-label">Day 2</div>
+        <div class="task-text"><strong>骑车安全对话</strong><br>Read & practice bike safety dialogue</div>
+        <div class="task-emoji">🚲</div>
+      </div>
+      <div class="day-task" id="task-2-3" onclick="toggleTask('2-3')">
+        <div class="day-check" id="check-2-3">✓</div>
+        <div class="day-label">Day 3</div>
+        <div class="task-text"><strong>医生对话角色扮演</strong><br>Role-play doctor-patient dialogue</div>
+        <div class="task-emoji">🩺</div>
+      </div>
+      <div class="day-task" id="task-2-4" onclick="toggleTask('2-4')">
+        <div class="day-check" id="check-2-4">✓</div>
+        <div class="day-label">Day 4</div>
+        <div class="task-text"><strong>消防安全阅读</strong><br>Read fire safety article</div>
+        <div class="task-emoji">🔥</div>
+      </div>
+      <div class="day-task" id="task-2-5" onclick="toggleTask('2-5')">
+        <div class="day-check" id="check-2-5">✓</div>
+        <div class="day-label">Day 5</div>
+        <div class="task-text"><strong>给病人提建议写短文</strong><br>Write advice for a sick person</div>
+        <div class="task-emoji">💊</div>
+      </div>
+      <div class="day-task" id="task-2-6" onclick="toggleTask('2-6')">
+        <div class="day-check" id="check-2-6">✓</div>
+        <div class="day-label">Day 6</div>
+        <div class="task-text"><strong>设计安全海报</strong><br>Design a safety poster in English</div>
+        <div class="task-emoji">🖼️</div>
+      </div>
+      <div class="day-task" id="task-2-7" onclick="toggleTask('2-7')">
+        <div class="day-check" id="check-2-7">✓</div>
+        <div class="day-label">Day 7</div>
+        <div class="task-text"><strong>第2周周测试</strong><br>Week 2 review test</div>
+        <div class="task-emoji">📋</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 3 -->
+  <div class="week-card week-3">
+    <div class="week-header">🚂 第3周 Week 3 — Unit 3: 科技与生活 Technology & Life</div>
+    <div class="week-days">
+      <div class="week-progress-bar"><div class="week-progress-fill" id="w3-bar" style="width:0%"></div></div>
+      <div class="week-progress-text" id="w3-text">0/7 完成</div>
+      <div class="day-task" id="task-3-1" onclick="toggleTask('3-1')">
+        <div class="day-check" id="check-3-1">✓</div>
+        <div class="day-label">Day 1</div>
+        <div class="task-text"><strong>学Unit3单词</strong><br>Study Unit 3 vocabulary words</div>
+        <div class="task-emoji">📝</div>
+      </div>
+      <div class="day-task" id="task-3-2" onclick="toggleTask('3-2')">
+        <div class="day-check" id="check-3-2">✓</div>
+        <div class="day-label">Day 2</div>
+        <div class="task-text"><strong>通信变革复述</strong><br>Retell how communication changed</div>
+        <div class="task-emoji">📱</div>
+      </div>
+      <div class="day-task" id="task-3-3" onclick="toggleTask('3-3')">
+        <div class="day-check" id="check-3-3">✓</div>
+        <div class="day-label">Day 3</div>
+        <div class="task-text"><strong>学习科技介绍文章</strong><br>Study technology introduction text</div>
+        <div class="task-emoji">💻</div>
+      </div>
+      <div class="day-task" id="task-3-4" onclick="toggleTask('3-4')">
+        <div class="day-check" id="check-3-4">✓</div>
+        <div class="day-label">Day 4</div>
+        <div class="task-text"><strong>青藏铁路阅读</strong><br>Read about the Qinghai-Xizang Railway</div>
+        <div class="task-emoji">🏔️</div>
+      </div>
+      <div class="day-task" id="task-3-5" onclick="toggleTask('3-5')">
+        <div class="day-check" id="check-3-5">✓</div>
+        <div class="day-label">Day 5</div>
+        <div class="task-text"><strong>北斗BDS导航阅读</strong><br>Read about BeiDou Navigation System</div>
+        <div class="task-emoji">🛰️</div>
+      </div>
+      <div class="day-task" id="task-3-6" onclick="toggleTask('3-6')">
+        <div class="day-check" id="check-3-6">✓</div>
+        <div class="day-label">Day 6</div>
+        <div class="task-text"><strong>调查爸妈以前的通信方式</strong><br>Survey parents about old communication</div>
+        <div class="task-emoji">👪</div>
+      </div>
+      <div class="day-task" id="task-3-7" onclick="toggleTask('3-7')">
+        <div class="day-check" id="check-3-7">✓</div>
+        <div class="day-label">Day 7</div>
+        <div class="task-text"><strong>口头介绍青藏铁路</strong><br>Give an oral report on the railway</div>
+        <div class="task-emoji">🎙️</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 4 -->
+  <div class="week-card week-4">
+    <div class="week-header">📖 第4周 Week 4 — Unit 4: 复习巩固 Revision</div>
+    <div class="week-days">
+      <div class="week-progress-bar"><div class="week-progress-fill" id="w4-bar" style="width:0%"></div></div>
+      <div class="week-progress-text" id="w4-text">0/7 完成</div>
+      <div class="day-task" id="task-4-1" onclick="toggleTask('4-1')">
+        <div class="day-check" id="check-4-1">✓</div>
+        <div class="day-label">Day 1</div>
+        <div class="task-text"><strong>Unit1-3词汇复盘</strong><br>Review all vocabulary from Units 1-3</div>
+        <div class="task-emoji">🔁</div>
+      </div>
+      <div class="day-task" id="task-4-2" onclick="toggleTask('4-2')">
+        <div class="day-check" id="check-4-2">✓</div>
+        <div class="day-label">Day 2</div>
+        <div class="task-text"><strong>阅读练习</strong><br>Reading comprehension practice</div>
+        <div class="task-emoji">📚</div>
+      </div>
+      <div class="day-task" id="task-4-3" onclick="toggleTask('4-3')">
+        <div class="day-check" id="check-4-3">✓</div>
+        <div class="day-label">Day 3</div>
+        <div class="task-text"><strong>口语复盘练习</strong><br>Speaking review practice</div>
+        <div class="task-emoji">💬</div>
+      </div>
+      <div class="day-task" id="task-4-4" onclick="toggleTask('4-4')">
+        <div class="day-check" id="check-4-4">✓</div>
+        <div class="day-label">Day 4</div>
+        <div class="task-text"><strong>写作练习</strong><br>Writing practice (short essay)</div>
+        <div class="task-emoji">✏️</div>
+      </div>
+      <div class="day-task" id="task-4-5" onclick="toggleTask('4-5')">
+        <div class="day-check" id="check-4-5">✓</div>
+        <div class="day-label">Day 5</div>
+        <div class="task-text"><strong>句型听写练习</strong><br>Dictation practice for key sentences</div>
+        <div class="task-emoji">👂</div>
+      </div>
+      <div class="day-task" id="task-4-6" onclick="toggleTask('4-6')">
+        <div class="day-check" id="check-4-6">✓</div>
+        <div class="day-label">Day 6</div>
+        <div class="task-text"><strong>语音练习</strong><br>Pronunciation & phonics practice</div>
+        <div class="task-emoji">🔊</div>
+      </div>
+      <div class="day-task" id="task-4-7" onclick="toggleTask('4-7')">
+        <div class="day-check" id="check-4-7">✓</div>
+        <div class="day-label">Day 7</div>
+        <div class="task-text"><strong>模拟综合测试</strong><br>Mock comprehensive test</div>
+        <div class="task-emoji">📝</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 5 -->
+  <div class="week-card week-5">
+    <div class="week-header">🏆 第5周 Week 5 — Unit 5: 名人榜样 Role Models</div>
+    <div class="week-days">
+      <div class="week-progress-bar"><div class="week-progress-fill" id="w5-bar" style="width:0%"></div></div>
+      <div class="week-progress-text" id="w5-text">0/7 完成</div>
+      <div class="day-task" id="task-5-1" onclick="toggleTask('5-1')">
+        <div class="day-check" id="check-5-1">✓</div>
+        <div class="day-label">Day 1</div>
+        <div class="task-text"><strong>学Unit5单词</strong><br>Study Unit 5 vocabulary words</div>
+        <div class="task-emoji">📝</div>
+      </div>
+      <div class="day-task" id="task-5-2" onclick="toggleTask('5-2')">
+        <div class="day-check" id="check-5-2">✓</div>
+        <div class="day-label">Day 2</div>
+        <div class="task-text"><strong>名人对话练习</strong><br>Practice famous people dialogue</div>
+        <div class="task-emoji">🌟</div>
+      </div>
+      <div class="day-task" id="task-5-3" onclick="toggleTask('5-3')">
+        <div class="day-check" id="check-5-3">✓</div>
+        <div class="day-label">Day 3</div>
+        <div class="task-text"><strong>顾方舟故事阅读</strong><br>Read the story of Gu Fangzhou</div>
+        <div class="task-emoji">💉</div>
+      </div>
+      <div class="day-task" id="task-5-4" onclick="toggleTask('5-4')">
+        <div class="day-check" id="check-5-4">✓</div>
+        <div class="day-label">Day 4</div>
+        <div class="task-text"><strong>写名人介绍短文</strong><br>Write a short intro about a famous person</div>
+        <div class="task-emoji">✍️</div>
+      </div>
+      <div class="day-task" id="task-5-5" onclick="toggleTask('5-5')">
+        <div class="day-check" id="check-5-5">✓</div>
+        <div class="day-label">Day 5</div>
+        <div class="task-text"><strong>我的榜样口头演讲</strong><br>Give a speech: "My Role Model"</div>
+        <div class="task-emoji">🎤</div>
+      </div>
+      <div class="day-task" id="task-5-6" onclick="toggleTask('5-6')">
+        <div class="day-check" id="check-5-6">✓</div>
+        <div class="day-label">Day 6</div>
+        <div class="task-text"><strong>语音连读练习</strong><br>Linking sounds & fluency practice</div>
+        <div class="task-emoji">🎵</div>
+      </div>
+      <div class="day-task" id="task-5-7" onclick="toggleTask('5-7')">
+        <div class="day-check" id="check-5-7">✓</div>
+        <div class="day-label">Day 7</div>
+        <div class="task-text"><strong>🎊 终极测试！ Final Test!</strong><br>You made it! Complete the final test!</div>
+        <div class="task-emoji">🏆</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SECTION: Words -->
+<div id="section-words" class="section">
+  <div class="section-title">🃏 单词翻转卡片 / Flip Word Cards</div>
+  <p style="text-align:center;color:#888;margin-bottom:20px;">点击卡片查看中文意思！Click a card to see the Chinese meaning! 👆</p>
+
+  <!-- Unit 1 -->
+  <div class="unit-section">
+    <div class="unit-title unit-1-title">🏖️ Unit 1 — 暑假故事 Summer Vacation Stories</div>
+    <div class="words-grid">
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">vacation</div>
+            <div class="word-phonetic">/vəˈkeɪʃən/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">假期</div>
+            <div class="word-hint">summer vacation 暑假</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">beach</div>
+            <div class="word-phonetic">/biːtʃ/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">海滩</div>
+            <div class="word-hint">go to the beach 去海滩</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">wonderful</div>
+            <div class="word-phonetic">/ˈwʌndəfl/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">精彩的</div>
+            <div class="word-hint">It was wonderful! 太棒了！</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">meaningful</div>
+            <div class="word-phonetic">/ˈmiːnɪŋfl/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">有意义的</div>
+            <div class="word-hint">有意义的经历</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">helmet</div>
+            <div class="word-phonetic">/ˈhelmɪt/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">头盔</div>
+            <div class="word-hint">wear a helmet 戴头盔</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">follow</div>
+            <div class="word-phonetic">/ˈfɒləʊ/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">遵守；跟随</div>
+            <div class="word-hint">follow the rules 遵守规则</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">rule</div>
+            <div class="word-phonetic">/ruːl/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">规则</div>
+            <div class="word-hint">traffic rules 交通规则</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">daytime</div>
+            <div class="word-phonetic">/ˈdeɪtaɪm/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">白天</div>
+            <div class="word-hint">in the daytime 在白天</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">university</div>
+            <div class="word-phonetic">/ˌjuːnɪˈvɜːsəti/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">大学</div>
+            <div class="word-hint">go to university 上大学</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">fall off</div>
+            <div class="word-phonetic">/fɔːl ɒf/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">摔下来</div>
+            <div class="word-hint">fall off the bike 从自行车上摔下来</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit 2 -->
+  <div class="unit-section">
+    <div class="unit-title unit-2-title">🚑 Unit 2 — 安全与健康 Safety & Health</div>
+    <div class="words-grid">
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">stomachache</div>
+            <div class="word-phonetic">/ˈstʌməkeɪk/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">胃痛；肚子痛</div>
+            <div class="word-hint">I have a stomachache.</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">advice</div>
+            <div class="word-phonetic">/ədˈvaɪs/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">建议</div>
+            <div class="word-hint">give advice 提建议</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">danger</div>
+            <div class="word-phonetic">/ˈdeɪndʒə/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">危险</div>
+            <div class="word-hint">in danger 处于危险中</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">safety</div>
+            <div class="word-phonetic">/ˈseɪfti/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">安全</div>
+            <div class="word-hint">safety rules 安全规则</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">firefighter</div>
+            <div class="word-phonetic">/ˈfaɪəfaɪtə/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">消防员</div>
+            <div class="word-hint">勇敢的消防员</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">stranger</div>
+            <div class="word-phonetic">/ˈstreɪndʒə/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">陌生人</div>
+            <div class="word-hint">Don't talk to strangers.</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">building</div>
+            <div class="word-phonetic">/ˈbɪldɪŋ/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">建筑物；大楼</div>
+            <div class="word-hint">leave the building 离开大楼</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">candle</div>
+            <div class="word-phonetic">/ˈkændl/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">蜡烛</div>
+            <div class="word-hint">light a candle 点蜡烛</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">cover</div>
+            <div class="word-phonetic">/ˈkʌvə/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">遮盖；盖上</div>
+            <div class="word-hint">cover your mouth 捂住嘴</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">secret</div>
+            <div class="word-phonetic">/ˈsiːkrɪt/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">秘密</div>
+            <div class="word-hint">keep a secret 保守秘密</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit 3 -->
+  <div class="unit-section">
+    <div class="unit-title unit-3-title">🚂 Unit 3 — 科技与生活 Technology & Life</div>
+    <div class="words-grid">
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">technology</div>
+            <div class="word-phonetic">/tekˈnɒlədʒi/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">技术；科技</div>
+            <div class="word-hint">modern technology 现代科技</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">communication</div>
+            <div class="word-phonetic">/kəˌmjuːnɪˈkeɪʃən/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">通信；交流</div>
+            <div class="word-hint">方式多样化了！</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">tradition</div>
+            <div class="word-phonetic">/trəˈdɪʃən/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">传统</div>
+            <div class="word-hint">traditional vs. modern</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">platform</div>
+            <div class="word-phonetic">/ˈplætfɔːm/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">站台；平台</div>
+            <div class="word-hint">train platform 站台</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">connect</div>
+            <div class="word-phonetic">/kəˈnekt/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">连接；联系</div>
+            <div class="word-hint">connect cities 连接城市</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">railway</div>
+            <div class="word-phonetic">/ˈreɪlweɪ/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">铁路</div>
+            <div class="word-hint">青藏铁路 Qinghai-Xizang Railway</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">global</div>
+            <div class="word-phonetic">/ˈɡləʊbəl/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">全球的</div>
+            <div class="word-hint">global communication</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">machine</div>
+            <div class="word-phonetic">/məˈʃiːn/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">机器</div>
+            <div class="word-hint">washing machine 洗衣机</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">solve</div>
+            <div class="word-phonetic">/sɒlv/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">解决</div>
+            <div class="word-hint">solve problems 解决问题</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">experience</div>
+            <div class="word-phonetic">/ɪkˈspɪəriəns/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">经历；经验</div>
+            <div class="word-hint">a great experience 很棒的经历</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit 5 -->
+  <div class="unit-section">
+    <div class="unit-title unit-5-title">🌟 Unit 5 — 名人榜样 Role Models</div>
+    <div class="words-grid">
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">role model</div>
+            <div class="word-phonetic">/ˈrəʊl ˌmɒdl/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">榜样</div>
+            <div class="word-hint">He is my role model.</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">educator</div>
+            <div class="word-phonetic">/ˈedʒukeɪtə/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">教育家</div>
+            <div class="word-hint">a great educator 伟大的教育家</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">musician</div>
+            <div class="word-phonetic">/mjuːˈzɪʃən/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">音乐家</div>
+            <div class="word-hint">a talented musician</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">scientist</div>
+            <div class="word-phonetic">/ˈsaɪəntɪst/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">科学家</div>
+            <div class="word-hint">顾方舟是一位科学家</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">proud</div>
+            <div class="word-phonetic">/praʊd/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">自豪的；骄傲的</div>
+            <div class="word-hint">I'm proud of China.</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">national anthem</div>
+            <div class="word-phonetic">/ˈnæʃənl ˈænθəm/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">国歌</div>
+            <div class="word-hint">sing the national anthem</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">collection</div>
+            <div class="word-phonetic">/kəˈlekʃən/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">收藏；合集</div>
+            <div class="word-hint">a collection of songs</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">vaccine</div>
+            <div class="word-phonetic">/ˈvæksiːn/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">疫苗</div>
+            <div class="word-hint">polio vaccine 脊髓灰质炎疫苗</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">patient</div>
+            <div class="word-phonetic">/ˈpeɪʃənt/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">病人；耐心的</div>
+            <div class="word-hint">be patient 要有耐心</div>
+          </div>
+        </div>
+      </div>
+      <div class="word-card" onclick="flipCard(this)">
+        <div class="word-card-inner">
+          <div class="word-front">
+            <div class="word-en">worth</div>
+            <div class="word-phonetic">/wɜːθ/</div>
+            <div class="flip-hint">👆 点击翻转 flip</div>
+          </div>
+          <div class="word-back">
+            <div class="word-cn">值得；有价值</div>
+            <div class="word-hint">It is worth reading.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SECTION: Sentences -->
+<div id="section-sentences" class="section">
+  <div class="section-title">💬 核心句型 / Key Sentence Patterns</div>
+
+  <div class="section-subtitle">🏖️ Unit 1 — 暑假故事 Summer Vacation</div>
+  <div class="sentences-grid">
+    <div class="sentence-card">
+      <div class="sentence-en">❓ How was your summer vacation?</div>
+      <div class="sentence-cn">你的暑假怎么样？</div>
+      <div class="sentence-example">→ It was wonderful! / It was meaningful!</div>
+    </div>
+    <div class="sentence-card">
+      <div class="sentence-en">❓ Where did you go?</div>
+      <div class="sentence-cn">你去哪里了？</div>
+      <div class="sentence-example">→ I went to Beijing. / I went to the beach.</div>
+    </div>
+    <div class="sentence-card">
+      <div class="sentence-en">❓ How did you get there?</div>
+      <div class="sentence-cn">你是怎么去那里的？</div>
+      <div class="sentence-example">→ By train. / By bus. / On foot. / By plane.</div>
+    </div>
+    <div class="sentence-card">
+      <div class="sentence-en">❓ What did you do there?</div>
+      <div class="sentence-cn">你在那里做了什么？</div>
+      <div class="sentence-example">→ I visited the Great Wall. / I swam in the sea.</div>
+    </div>
+  </div>
+
+  <div class="section-subtitle" style="margin-top:28px;">🚑 Unit 2 — 安全与健康 Safety & Health</div>
+  <div class="sentences-grid">
+    <div class="sentence-card">
+      <div class="sentence-en">✅ We should wear a helmet when we ride a bike.</div>
+      <div class="sentence-cn">骑自行车时我们应该戴头盔。</div>
+      <div class="sentence-example">We should / We shouldn't + 动词原形</div>
+    </div>
+    <div class="sentence-card">
+      <div class="sentence-en">💡 It's better to call 119 in a fire.</div>
+      <div class="sentence-cn">火灾时最好拨打119。</div>
+      <div class="sentence-example">It's better to + 动词原形</div>
+    </div>
+    <div class="sentence-card">
+      <div class="sentence-en">😷 I have a stomachache / toothache / headache.</div>
+      <div class="sentence-cn">我胃痛 / 牙痛 / 头痛。</div>
+      <div class="sentence-example">I have a + 疾病名称</div>
+    </div>
+    <div class="sentence-card">
+      <div class="sentence-en">🤝 How can I help you?</div>
+      <div class="sentence-cn">我能帮你什么？</div>
+      <div class="sentence-example">→ You should rest and drink more water.</div>
+    </div>
+  </div>
+
+  <div class="section-subtitle" style="margin-top:28px;">🚂 Unit 3 — 科技与生活 Technology & Life</div>
+  <div class="sentences-grid">
+    <div class="sentence-card">
+      <div class="sentence-en">🌐 Technology is changing our communication / learning.</div>
+      <div class="sentence-cn">科技正在改变我们的通信方式 / 学习方式。</div>
+      <div class="sentence-example">Technology is changing + 名词</div>
+    </div>
+    <div class="sentence-card">
+      <div class="sentence-en">⏳ In the past, people wrote letters. Now, people send emails.</div>
+      <div class="sentence-cn">过去，人们写信。现在，人们发电子邮件。</div>
+      <div class="sentence-example">In the past... Now...</div>
+    </div>
+    <div class="sentence-card">
+      <div class="sentence-en">🚄 The Qinghai-Xizang Railway went into service in 2006.</div>
+      <div class="sentence-cn">青藏铁路于2006年建成通车。</div>
+      <div class="sentence-example">went into service = 开始运营</div>
+    </div>
+  </div>
+
+  <div class="section-subtitle" style="margin-top:28px;">🌟 Unit 5 — 名人榜样 Role Models</div>
+  <div class="sentences-grid">
+    <div class="sentence-card">
+      <div class="sentence-en">⭐ He / She is famous for his/her achievements.</div>
+      <div class="sentence-cn">他/她以成就而闻名。</div>
+      <div class="sentence-example">be famous for + 名词/动名词</div>
+    </div>
+    <div class="sentence-card">
+      <div class="sentence-en">💫 He / She is famous because he/she worked hard.</div>
+      <div class="sentence-cn">他/她因为努力工作而出名。</div>
+      <div class="sentence-example">be famous because + 句子</div>
+    </div>
+    <div class="sentence-card">
+      <div class="sentence-en">🙌 He / She is my role model.</div>
+      <div class="sentence-cn">他/她是我的榜样。</div>
+      <div class="sentence-example">用你心中的榜样代替 He/She！</div>
+    </div>
+    <div class="sentence-card">
+      <div class="sentence-en">🌈 I want to be a scientist like him / her.</div>
+      <div class="sentence-cn">我想像他/她一样成为一名科学家。</div>
+      <div class="sentence-example">I want to be + 职业 + like him/her</div>
+    </div>
+  </div>
+
+  <!-- Dialogue Example -->
+  <div style="background:white;border-radius:20px;padding:20px;margin-top:28px;box-shadow:var(--shadow);">
+    <h3 style="color:var(--purple);margin-bottom:14px;">🎭 对话示例 Sample Dialogue</h3>
+    <div style="background:#f8f9fa;border-radius:12px;padding:16px;font-size:0.95em;line-height:2;">
+      <p><strong style="color:#FF6B6B;">Tom:</strong> How was your summer vacation, Lily?</p>
+      <p><strong style="color:#4ECDC4;">Lily:</strong> It was wonderful! I went to Beijing with my family.</p>
+      <p><strong style="color:#FF6B6B;">Tom:</strong> Really? How did you get there?</p>
+      <p><strong style="color:#4ECDC4;">Lily:</strong> By train. It was very fast!</p>
+      <p><strong style="color:#FF6B6B;">Tom:</strong> What did you do there?</p>
+      <p><strong style="color:#4ECDC4;">Lily:</strong> I visited the Great Wall and the Palace Museum. It was meaningful.</p>
+      <p><strong style="color:#FF6B6B;">Tom:</strong> Wow, that sounds amazing!</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- SECTION: Tips -->
+<div id="section-tips" class="section">
+  <div class="section-title">💡 学习小贴士 / Study Tips</div>
+
+  <div style="display:grid;gap:16px;">
+    <div style="background:white;border-radius:20px;padding:20px;box-shadow:var(--shadow);border-left:5px solid var(--primary);">
+      <h3 style="color:var(--primary);margin-bottom:10px;">🗣️ 口语练习 Speaking Practice</h3>
+      <ul style="padding-left:20px;line-height:2;color:#555;">
+        <li>每天大声朗读10分钟 Read aloud 10 min daily</li>
+        <li>跟着音频模仿语音语调 Imitate the audio pronunciation</li>
+        <li>对着镜子练习口语 Practice speaking in front of a mirror</li>
+        <li>用中文想一想，再翻译成英文 Think in Chinese first, then translate</li>
+      </ul>
+    </div>
+    <div style="background:white;border-radius:20px;padding:20px;box-shadow:var(--shadow);border-left:5px solid var(--secondary);">
+      <h3 style="color:var(--secondary);margin-bottom:10px;">📝 单词记忆 Vocabulary Tips</h3>
+      <ul style="padding-left:20px;line-height:2;color:#555;">
+        <li>用单词造句，不只背单词 Make sentences, don't just memorize</li>
+        <li>把单词写在便利贴上贴到墙上 Write words on sticky notes</li>
+        <li>每天复习昨天的单词 Review yesterday's words every day</li>
+        <li>用单词卡片（闪卡）反复练习 Use flashcards to practice repeatedly</li>
+      </ul>
+    </div>
+    <div style="background:white;border-radius:20px;padding:20px;box-shadow:var(--shadow);border-left:5px solid var(--purple);">
+      <h3 style="color:var(--purple);margin-bottom:10px;">✍️ 写作技巧 Writing Tips</h3>
+      <ul style="padding-left:20px;line-height:2;color:#555;">
+        <li>先列提纲再动笔 Outline before you write</li>
+        <li>用上课本里的句型 Use sentence patterns from the textbook</li>
+        <li>写完后大声读一遍检查 Read aloud after writing to check</li>
+        <li>注意大写和标点符号 Check capitalization and punctuation</li>
+      </ul>
+    </div>
+    <div style="background:white;border-radius:20px;padding:20px;box-shadow:var(--shadow);border-left:5px solid var(--accent);">
+      <h3 style="color:#d97706;margin-bottom:10px;">⏰ 每日学习计划 Daily Schedule</h3>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.9em;">
+          <tr style="background:#FFF9C4;">
+            <th style="padding:8px 12px;text-align:left;border-radius:8px 0 0 0;">时间 Time</th>
+            <th style="padding:8px 12px;text-align:left;">任务 Task</th>
+            <th style="padding:8px 12px;text-align:left;border-radius:0 8px 0 0;">时长 Duration</th>
+          </tr>
+          <tr><td style="padding:8px 12px;">上午 Morning</td><td>单词学习 Vocab Study</td><td>15 min ⏱️</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:8px 12px;">上午 Morning</td><td>跟读练习 Read Aloud</td><td>10 min 🗣️</td></tr>
+          <tr><td style="padding:8px 12px;">下午 Afternoon</td><td>课文阅读 Text Reading</td><td>15 min 📖</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:8px 12px;">晚上 Evening</td><td>写作/句型 Writing</td><td>20 min ✍️</td></tr>
+          <tr><td style="padding:8px 12px;">睡前 Bedtime</td><td>复习单词 Review Words</td><td>5 min 🔁</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg, #667eea, #764ba2);border-radius:20px;padding:24px;box-shadow:var(--shadow);color:white;text-align:center;">
+      <div style="font-size:2.5em;margin-bottom:10px;">🌟 💪 🎯</div>
+      <h3 style="margin-bottom:12px;font-size:1.2em;">记住！Remember!</h3>
+      <p style="font-size:1.05em;line-height:1.8;">每天坚持一点点，暑假结束时你会发现自己进步了很多！<br>
+      <em>A little every day — by the end of summer, you'll be amazed at how much you've grown!</em></p>
+      <div style="margin-top:14px;font-size:0.95em;opacity:0.85;">
+        坚持 = 成功 🏆 | Persistence = Success!
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SECTION: Quiz -->
+<div id="section-quiz">
+  <p style="text-align:center;color:#667eea;font-weight:800;font-size:1.3em;margin-bottom:4px;">🧪 题库练习 Practice Quiz</p>
+  <p style="text-align:center;color:#888;font-size:0.9em;margin-bottom:18px;">选择单元 → 作答 → 自动评分 ✨ | 错题自动收录错题本 📒</p>
+
+  <!-- Unit switch buttons -->
+  <div class="quiz-unit-tabs">
+    <button class="quiz-unit-btn active" onclick="switchQuizUnit('u1',this)">🏖️ Unit 1<br><span style="font-size:0.8em;font-weight:400">暑假故事</span></button>
+    <button class="quiz-unit-btn" onclick="switchQuizUnit('u2',this)">🚑 Unit 2<br><span style="font-size:0.8em;font-weight:400">安全健康</span></button>
+    <button class="quiz-unit-btn" onclick="switchQuizUnit('u3',this)">🚂 Unit 3<br><span style="font-size:0.8em;font-weight:400">科技生活</span></button>
+    <button class="quiz-unit-btn" onclick="switchQuizUnit('u5',this)">🌟 Unit 5<br><span style="font-size:0.8em;font-weight:400">名人榜样</span></button>
+  </div>
+
+  <!-- ===== UNIT 1 ===== -->
+  <div id="quiz-u1" class="quiz-unit-panel active">
+    <div class="quiz-block">
+      <div class="quiz-block-title mc">🔵 选择题 Multiple Choice (10题)</div>
+      <div id="u1-mc"></div>
+      <button class="quiz-submit-btn" onclick="submitQuiz('u1')">📝 提交答案 Submit</button>
+      <div class="quiz-result-bar" id="u1-result"></div>
+    </div>
+    <div class="quiz-block">
+      <div class="quiz-block-title fb">🟢 填空题 Fill in the Blank (5题)</div>
+      <div class="fb-wordbank"><strong>📦 词库 Word Bank:</strong> on foot &nbsp;|&nbsp; by bike &nbsp;|&nbsp; swimming &nbsp;|&nbsp; visited &nbsp;|&nbsp; stayed</div>
+      <div id="u1-fb"></div>
+    </div>
+    <div class="quiz-block">
+      <div class="quiz-block-title rearr">🟠 句型排列 Sentence Arrangement (3题)</div>
+      <p style="font-size:0.85em;color:#6b7280;margin-bottom:12px;">👆 点击单词加入答案，点击答案区的词语可移回</p>
+      <div id="u1-rearr"></div>
+    </div>
+  </div>
+
+  <!-- ===== UNIT 2 ===== -->
+  <div id="quiz-u2" class="quiz-unit-panel">
+    <div class="quiz-block">
+      <div class="quiz-block-title mc">🔵 选择题 Multiple Choice (10题)</div>
+      <div id="u2-mc"></div>
+      <button class="quiz-submit-btn" onclick="submitQuiz('u2')">📝 提交答案 Submit</button>
+      <div class="quiz-result-bar" id="u2-result"></div>
+    </div>
+    <div class="quiz-block">
+      <div class="quiz-block-title fb">🟢 填空题 Fill in the Blank (5题)</div>
+      <div class="fb-wordbank"><strong>📦 词库 Word Bank:</strong> helmet &nbsp;|&nbsp; danger &nbsp;|&nbsp; stomachache &nbsp;|&nbsp; should &nbsp;|&nbsp; stranger</div>
+      <div id="u2-fb"></div>
+    </div>
+    <div class="quiz-block">
+      <div class="quiz-block-title rearr">🟠 句型排列 Sentence Arrangement (3题)</div>
+      <p style="font-size:0.85em;color:#6b7280;margin-bottom:12px;">👆 点击单词加入答案，点击答案区的词语可移回</p>
+      <div id="u2-rearr"></div>
+    </div>
+  </div>
+
+  <!-- ===== UNIT 3 ===== -->
+  <div id="quiz-u3" class="quiz-unit-panel">
+    <div class="quiz-block">
+      <div class="quiz-block-title mc">🔵 选择题 Multiple Choice (10题)</div>
+      <div id="u3-mc"></div>
+      <button class="quiz-submit-btn" onclick="submitQuiz('u3')">📝 提交答案 Submit</button>
+      <div class="quiz-result-bar" id="u3-result"></div>
+    </div>
+    <div class="quiz-block">
+      <div class="quiz-block-title fb">🟢 填空题 Fill in the Blank (5题)</div>
+      <div class="fb-wordbank"><strong>📦 词库 Word Bank:</strong> technology &nbsp;|&nbsp; railway &nbsp;|&nbsp; communication &nbsp;|&nbsp; connect &nbsp;|&nbsp; solve</div>
+      <div id="u3-fb"></div>
+    </div>
+    <div class="quiz-block">
+      <div class="quiz-block-title rearr">🟠 句型排列 Sentence Arrangement (3题)</div>
+      <p style="font-size:0.85em;color:#6b7280;margin-bottom:12px;">👆 点击单词加入答案，点击答案区的词语可移回</p>
+      <div id="u3-rearr"></div>
+    </div>
+  </div>
+
+  <!-- ===== UNIT 5 ===== -->
+  <div id="quiz-u5" class="quiz-unit-panel">
+    <div class="quiz-block">
+      <div class="quiz-block-title mc">🔵 选择题 Multiple Choice (10题)</div>
+      <div id="u5-mc"></div>
+      <button class="quiz-submit-btn" onclick="submitQuiz('u5')">📝 提交答案 Submit</button>
+      <div class="quiz-result-bar" id="u5-result"></div>
+    </div>
+    <div class="quiz-block">
+      <div class="quiz-block-title fb">🟢 填空题 Fill in the Blank (5题)</div>
+      <div class="fb-wordbank"><strong>📦 词库 Word Bank:</strong> role model &nbsp;|&nbsp; famous &nbsp;|&nbsp; proud &nbsp;|&nbsp; scientist &nbsp;|&nbsp; achievements</div>
+      <div id="u5-fb"></div>
+    </div>
+    <div class="quiz-block">
+      <div class="quiz-block-title rearr">🟠 句型排列 Sentence Arrangement (3题)</div>
+      <p style="font-size:0.85em;color:#6b7280;margin-bottom:12px;">👆 点击单词加入答案，点击答案区的词语可移回</p>
+      <div id="u5-rearr"></div>
+    </div>
+  </div>
+
+  <!-- Wrong Answer Book -->
+  <div class="wrongbook-section" id="wrongbook-section">
+    <div class="wrongbook-title">📒 错题本 Wrong Answer Book</div>
+    <div id="wrongbook-list"><div class="wrongbook-empty">暂无错题，继续加油！No wrong answers yet!</div></div>
+    <button class="wrongbook-clear-btn" onclick="clearWrongBook()" style="margin-top:10px;">🗑️ 清空错题本</button>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="mascot" style="font-size:2em;">🦉</span>
+  <p>📚 六年级英语暑假自学手册 | Grade 6 English Summer Study Guide</p>
+  <p style="margin-top:4px;">进度保存在本地浏览器 · Progress saved locally · 加油! Keep it up! 🌟</p>
+</div>
+
+<script>
+// ========== STATE MANAGEMENT ==========
+const STORAGE_KEY = 'g6_english_progress';
+
+function loadState() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { tasks: {}, words: {} };
+  } catch(e) {
+    return { tasks: {}, words: {} };
+  }
+}
+
+function saveState(state) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+let state = loadState();
+
+// ========== NAVIGATION ==========
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('section-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  updateProgress();
+}
+
+// ========== TASK TOGGLING ==========
+function toggleTask(taskId) {
+  if (!state.tasks) state.tasks = {};
+  state.tasks[taskId] = !state.tasks[taskId];
+  saveState(state);
+  renderTask(taskId);
+  updateProgress();
+  
+  if (state.tasks[taskId]) {
+    // Check milestones
+    checkMilestones();
+  }
+}
+
+function renderTask(taskId) {
+  const taskEl = document.getElementById('task-' + taskId);
+  const checkEl = document.getElementById('check-' + taskId);
+  if (!taskEl || !checkEl) return;
+  
+  if (state.tasks[taskId]) {
+    taskEl.classList.add('completed');
+    checkEl.innerHTML = '✓';
+    checkEl.style.background = '#28a745';
+    checkEl.style.borderColor = '#28a745';
+    checkEl.style.color = 'white';
+  } else {
+    taskEl.classList.remove('completed');
+    checkEl.innerHTML = '✓';
+    checkEl.style.background = 'white';
+    checkEl.style.borderColor = '#ddd';
+    checkEl.style.color = '#ddd';
+  }
+}
+
+// ========== PROGRESS ==========
+function countCompleted() {
+  if (!state.tasks) return 0;
+  return Object.values(state.tasks).filter(Boolean).length;
+}
+
+function updateProgress() {
+  const done = countCompleted();
+  const total = 35;
+  const pct = Math.round((done / total) * 100);
+  
+  // Main progress bar
+  const bar = document.getElementById('main-progress-bar');
+  if (bar) bar.style.width = pct + '%';
+  
+  const doneCount = document.getElementById('done-count');
+  if (doneCount) doneCount.textContent = done;
+  
+  // Stars
+  const starsEl = document.getElementById('stars-display');
+  if (starsEl) {
+    if (done === 0) starsEl.textContent = '⭐ 准备好了吗？Let\'s start!';
+    else if (done < 7) starsEl.textContent = '⭐ 好的开始！Great start!';
+    else if (done < 14) starsEl.textContent = '⭐⭐ 继续加油！Keep going!';
+    else if (done < 21) starsEl.textContent = '⭐⭐⭐ 太棒了！Amazing!';
+    else if (done < 28) starsEl.textContent = '⭐⭐⭐⭐ 你真厉害！Wonderful!';
+    else if (done < 35) starsEl.textContent = '⭐⭐⭐⭐⭐ 快到终点了！Almost there!';
+    else starsEl.textContent = '🏆🌟🎉 全部完成！You\'re a champion!';
+  }
+  
+  // Week progress bars
+  for (let w = 1; w <= 5; w++) {
+    let weekDone = 0;
+    for (let d = 1; d <= 7; d++) {
+      if (state.tasks && state.tasks[w + '-' + d]) weekDone++;
+    }
+    const wBar = document.getElementById('w' + w + '-bar');
+    const wText = document.getElementById('w' + w + '-text');
+    if (wBar) wBar.style.width = Math.round((weekDone/7)*100) + '%';
+    if (wText) wText.textContent = weekDone + '/7 完成';
+  }
+  
+  // Badges
+  updateBadges(done);
+}
+
+function updateBadges(done) {
+  // Week badges
+  const weekBadges = [
+    { id: 'badge-week1', week: 1 },
+    { id: 'badge-week2', week: 2 },
+    { id: 'badge-week3', week: 3 },
+    { id: 'badge-week4', week: 4 },
+    { id: 'badge-week5', week: 5 },
+  ];
+  
+  weekBadges.forEach(({ id, week }) => {
+    let weekDone = 0;
+    for (let d = 1; d <= 7; d++) {
+      if (state.tasks && state.tasks[week + '-' + d]) weekDone++;
+    }
+    const el = document.getElementById(id);
+    if (el) {
+      if (weekDone === 7) el.classList.add('earned');
+      else el.classList.remove('earned');
+    }
+  });
+  
+  // Half badge
+  const halfBadge = document.getElementById('badge-half');
+  if (halfBadge) {
+    if (done >= 18) halfBadge.classList.add('earned');
+    else halfBadge.classList.remove('earned');
+  }
+  
+  // Perfect badge
+  const perfectBadge = document.getElementById('badge-perfect');
+  if (perfectBadge) {
+    if (done === 35) perfectBadge.classList.add('earned');
+    else perfectBadge.classList.remove('earned');
+  }
+}
+
+// ========== MILESTONES ==========
+const shownMilestones = new Set();
+
+function checkMilestones() {
+  const done = countCompleted();
+  const milestones = [
+    { n: 1, msg: '🎉 完成第1天！Great job starting! 🌟' },
+    { n: 7, msg: '🏖️ 第1周完成！Week 1 done! You\'re awesome!' },
+    { n: 14, msg: '🚑 第2周完成！Week 2 done! Halfway there!' },
+    { n: 18, msg: '🌟 已完成一半！Halfway champion!' },
+    { n: 21, msg: '🚂 第3周完成！Week 3 done! Keep it up!' },
+    { n: 28, msg: '📖 第4周完成！Week 4 done! One more week!' },
+    { n: 35, msg: '🏆🎊 全部完成！You are a CHAMPION! 恭喜你！' },
+  ];
+  
+  milestones.forEach(m => {
+    if (done >= m.n && !shownMilestones.has(m.n)) {
+      shownMilestones.add(m.n);
+      showToast(m.msg);
+    }
+  });
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+// ========== WORD CARDS ==========
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+
+// ========== RESET ==========
+function confirmReset() {
+  if (confirm('确定要重置所有进度吗？\nAre you sure you want to reset all progress?')) {
+    state = { tasks: {}, words: {} };
+    saveState(state);
+    initRender();
+    showToast('🔄 进度已重置 Progress reset!');
+  }
+}
+
+// ========== INIT ==========
+function initRender() {
+  // Render all task states
+  for (let w = 1; w <= 5; w++) {
+    for (let d = 1; d <= 7; d++) {
+      renderTask(w + '-' + d);
+    }
+  }
+  updateProgress();
+}
+
+// Run on load
+
+// ===== QUIZ DATA =====
+const QUIZ_DATA = {
+  u1: {
+    name: 'Unit 1 暑假故事',
+    mc: [
+      { q: 'How ___ your summer vacation?', opts: ['was','is','were','are'], ans: 0 },
+      { q: 'I ___ to Dalian with my family.', opts: ['go','goes','went','going'], ans: 2 },
+      { q: 'We ___ a good time there.', opts: ['have','has','had','having'], ans: 2 },
+      { q: 'I went there ___ train.', opts: ['in','on','by','with'], ans: 2 },
+      { q: 'Yangyang ___ in Beijing and joined a sports club.', opts: ['stay','stayed','stays','staying'], ans: 1 },
+      { q: 'I went ___ with my friends at the beach.', opts: ['swim','swam','swimming','to swim'], ans: 2 },
+      { q: 'My vacation was ___.', opts: ['well','good','nice','fine'], ans: 1 },
+      { q: 'We ___ ride a bike carefully.', opts: ['should',"shouldn't","can't","don't"], ans: 0 },
+      { q: "It's better ___ eat right.", opts: ['to','for','of','in'], ans: 0 },
+      { q: 'I had a ___ vacation.', opts: ['wonder','wonderful','wondering','wondered'], ans: 1 }
+    ],
+    fb: [
+      { q: 'I ___ my grandparents last summer.', ans: 'visited' },
+      { q: 'We went to the beach and went ___.', ans: 'swimming' },
+      { q: 'She goes to school ___ every day.', ans: 'on foot' },
+      { q: 'He ___ at home during the holiday.', ans: 'stayed' },
+      { q: 'My brother goes to school ___.', ans: 'by bike' }
+    ],
+    rearr: [
+      { words: ['vacation','summer','my','wonderful','was'], ans: 'My summer vacation was wonderful.' },
+      { words: ['family','I','my','with','traveled'], ans: 'I traveled with my family.' },
+      { words: ['lot','learned','we','a'], ans: 'We learned a lot.' }
+    ]
+  },
+  u2: {
+    name: 'Unit 2 安全健康',
+    mc: [
+      { q: 'We ___ wear a helmet when we ride a bike.', opts: ['should',"shouldn't",'can','must not'], ans: 0 },
+      { q: "It's better ___ call 119 in a fire.", opts: ['for','of','to','at'], ans: 2 },
+      { q: 'I have a ___. I need to see a doctor.', opts: ['stomachache','stomach','stomachs','stomached'], ans: 0 },
+      { q: "Don't talk to ___ on the street.", opts: ['stranger','strangers','strange','strangely'], ans: 1 },
+      { q: 'We should ___ the building calmly in a fire.', opts: ['leave','left','leaves','leaving'], ans: 0 },
+      { q: '___ should we do if there is a fire?', opts: ['How','What','Where','When'], ans: 1 },
+      { q: 'You should drink more water and get ___.', opts: ['rest','resting','rested','to rest'], ans: 0 },
+      { q: 'The firefighters are very ___.', opts: ['brave','bravely','braved','braver'], ans: 0 },
+      { q: 'Cover your mouth ___ a wet cloth.', opts: ['by','with','use','on'], ans: 1 },
+      { q: 'We ___ play with fire indoors.', opts: ['should',"shouldn't",'can','will'], ans: 1 }
+    ],
+    fb: [
+      { q: 'You must wear a ___ when riding a bike.', ans: 'helmet' },
+      { q: 'Playing with fire is very ___.', ans: 'danger' },
+      { q: 'I have a ___ because I ate too much.', ans: 'stomachache' },
+      { q: 'You ___ follow the traffic rules.', ans: 'should' },
+      { q: "Don't go anywhere with a ___ .", ans: 'stranger' }
+    ],
+    rearr: [
+      { words: ['helmet','a','should','wear','you'], ans: 'You should wear a helmet.' },
+      { words: ['fire','a','there','is','if'], ans: 'If there is a fire.' },
+      { words: ['rules','traffic','follow','the'], ans: 'Follow the traffic rules.' }
+    ]
+  },
+  u3: {
+    name: 'Unit 3 科技生活',
+    mc: [
+      { q: '___ is changing our communication.', opts: ['Technology','Technologic','Technologies','Technical'], ans: 0 },
+      { q: 'In the past, people ___ letters.', opts: ['write','writes','wrote','written'], ans: 2 },
+      { q: 'The Qinghai-Xizang Railway went into service in ___.', opts: ['2004','2005','2006','2007'], ans: 2 },
+      { q: 'BDS ___ for BeiDou Navigation Satellite System.', opts: ['stands','stand','stood','standing'], ans: 0 },
+      { q: 'Technology helps us ___ problems.', opts: ['solve','solved','solving','solves'], ans: 0 },
+      { q: 'We can ___ with friends by email.', opts: ['communicate','communication','communicated','communicating'], ans: 0 },
+      { q: 'The ___ connects many cities in China.', opts: ['rail','railway','railroads','railing'], ans: 1 },
+      { q: 'Machines make our life ___.', opts: ['easy','easier','easiest','easily'], ans: 1 },
+      { q: 'People use smartphones ___ information.', opts: ['find','finds','to find','finding'], ans: 2 },
+      { q: 'This is a ___ experience for me.', opts: ['wonder','wonderful','wondering','wondered'], ans: 1 }
+    ],
+    fb: [
+      { q: '___ is changing the way we live.', ans: 'Technology' },
+      { q: 'The Qinghai-Xizang ___ is very long.', ans: 'railway' },
+      { q: 'Email is a fast way of ___.', ans: 'communication' },
+      { q: 'The internet can ___ people around the world.', ans: 'connect' },
+      { q: 'Scientists ___ problems with new inventions.', ans: 'solve' }
+    ],
+    rearr: [
+      { words: ['changing','technology','our','is','life'], ans: 'Technology is changing our life.' },
+      { words: ['past','wrote','in','the','people','letters'], ans: 'In the past people wrote letters.' },
+      { words: ['cities','connects','railway','the','many'], ans: 'The railway connects many cities.' }
+    ]
+  },
+  u5: {
+    name: 'Unit 5 名人榜样',
+    mc: [
+      { q: 'He is famous ___ his achievements.', opts: ['for','of','at','in'], ans: 0 },
+      { q: 'She ___ a scientist who saved many lives.', opts: ['be','is','was','were'], ans: 2 },
+      { q: 'Gu Fangzhou ___ a vaccine for children.', opts: ['develop','develops','developed','developing'], ans: 2 },
+      { q: 'I want to be a scientist ___ him.', opts: ['like','as','to','for'], ans: 0 },
+      { q: 'He is my ___ because he worked very hard.', opts: ['role model','rolemodel','roles model','role models'], ans: 0 },
+      { q: 'She is ___ for writing the national anthem.', opts: ['famous','fame','famed','famously'], ans: 0 },
+      { q: 'I am very ___ of our country.', opts: ['proud','pride','proudly','prouder'], ans: 0 },
+      { q: 'He ___ hard all his life to help others.', opts: ['work','works','worked','working'], ans: 2 },
+      { q: 'We should learn ___ our role models.', opts: ['to','from','in','at'], ans: 1 },
+      { q: 'His story is worth ___.', opts: ['read','reads','reading','to reading'], ans: 2 }
+    ],
+    fb: [
+      { q: 'He is my ___ because he inspires me.', ans: 'role model' },
+      { q: 'She is ___ for her great music.', ans: 'famous' },
+      { q: 'I am very ___ of being Chinese.', ans: 'proud' },
+      { q: 'Gu Fangzhou was a great ___ who invented a vaccine.', ans: 'scientist' },
+      { q: 'We should learn from the ___ of great people.', ans: 'achievements' }
+    ],
+    rearr: [
+      { words: ['model','my','is','he','role'], ans: 'He is my role model.' },
+      { words: ['famous','achievements','for','she','her','is'], ans: 'She is famous for her achievements.' },
+      { words: ['hard','worked','life','he','his','all'], ans: 'He worked hard all his life.' }
+    ]
+  }
+};
+
+// ===== QUIZ STATE =====
+const QUIZ_STORAGE_KEY = 'g6_quiz_state';
+
+function loadQuizState() {
+  try { return JSON.parse(localStorage.getItem(QUIZ_STORAGE_KEY)) || { highScores: {}, wrongBook: [] }; }
+  catch(e) { return { highScores: {}, wrongBook: [] }; }
+}
+function saveQuizState(qs) {
+  localStorage.setItem(QUIZ_STORAGE_KEY, JSON.stringify(qs));
+}
+let quizState = loadQuizState();
+
+// Per-unit answer state (in memory, reset on retry)
+const unitAnswers = { u1: {}, u2: {}, u3: {}, u5: {} };
+// rearr placed words per unit per question
+const rarrPlaced = { u1: {}, u2: {}, u3: {}, u5: {} };
+
+// ===== RENDER QUIZ =====
+function renderAllQuiz() {
+  ['u1','u2','u3','u5'].forEach(uid => renderUnit(uid));
+  renderWrongBook();
+}
+
+function renderUnit(uid) {
+  renderMC(uid);
+  renderFB(uid);
+  renderRearr(uid);
+}
+
+function renderMC(uid) {
+  const container = document.getElementById(uid + '-mc');
+  if (!container) return;
+  const data = QUIZ_DATA[uid].mc;
+  let html = '';
+  data.forEach((q, qi) => {
+    html += '<div class="quiz-q" id="' + uid + '-mc-q' + qi + '">';
+    html += '<div class="quiz-q-text"><span class="quiz-q-num">' + (qi+1) + '</span>' + escHtml(q.q) + '</div>';
+    html += '<div class="mc-options">';
+    q.opts.forEach((opt, oi) => {
+      html += '<div class="mc-option" id="' + uid + '-mc-' + qi + '-' + oi + '" onclick="selectMC(\'' + uid + '\',' + qi + ',' + oi + ')">' + escHtml(opt) + '</div>';
+    });
+    html += '</div></div>';
+  });
+  container.innerHTML = html;
+}
+
+function renderFB(uid) {
+  const container = document.getElementById(uid + '-fb');
+  if (!container) return;
+  const data = QUIZ_DATA[uid].fb;
+  let html = '';
+  data.forEach((q, qi) => {
+    html += '<div class="quiz-q fb-input-row" id="' + uid + '-fb-q' + qi + '">';
+    html += '<span class="quiz-q-num">' + (qi+1) + '</span>';
+    const parts = q.q.split('___');
+    html += '<span>' + escHtml(parts[0]) + '</span>';
+    html += '<input class="fb-input" id="' + uid + '-fb-inp' + qi + '" type="text" placeholder="填写答案..." onchange="saveFBAnswer(\'' + uid + '\',' + qi + ',this.value)" />';
+    if (parts[1]) html += '<span>' + escHtml(parts[1]) + '</span>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function renderRearr(uid) {
+  const container = document.getElementById(uid + '-rearr');
+  if (!container) return;
+  const data = QUIZ_DATA[uid].rearr;
+  rarrPlaced[uid] = {};
+  let html = '';
+  data.forEach((q, qi) => {
+    rarrPlaced[uid][qi] = [];
+    html += '<div class="quiz-q" id="' + uid + '-rearr-q' + qi + '">';
+    html += '<div class="quiz-q-text"><span class="quiz-q-num">' + (qi+1) + '</span>将下列单词排列成正确句子：</div>';
+    html += '<div class="rearr-words" id="' + uid + '-rw-' + qi + '">';
+    q.words.forEach((w, wi) => {
+      html += '<button class="rearr-word" id="' + uid + '-rw-' + qi + '-' + wi + '" onclick="rarrClickWord(\'' + uid + '\',' + qi + ',' + wi + ')">' + escHtml(w) + '</button>';
+    });
+    html += '</div>';
+    html += '<div class="rearr-answer-area" id="' + uid + '-ra-' + qi + '" onclick="rarrClickAnswer(event,\'' + uid + '\',' + qi + ')"></div>';
+    html += '<div class="rearr-hint" id="' + uid + '-rh-' + qi + '"></div>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+// ===== INTERACTIONS =====
+function selectMC(uid, qi, oi) {
+  const data = QUIZ_DATA[uid].mc[qi];
+  // Check if already submitted
+  if (document.getElementById(uid + '-mc-' + qi + '-0') && document.getElementById(uid + '-mc-' + qi + '-0').classList.contains('disabled')) return;
+  // Deselect previous
+  const prevSel = unitAnswers[uid]['mc_' + qi];
+  if (prevSel !== undefined) {
+    const prevEl = document.getElementById(uid + '-mc-' + qi + '-' + prevSel);
+    if (prevEl) prevEl.classList.remove('selected');
+  }
+  unitAnswers[uid]['mc_' + qi] = oi;
+  const el = document.getElementById(uid + '-mc-' + qi + '-' + oi);
+  if (el) el.classList.add('selected');
+}
+
+function saveFBAnswer(uid, qi, val) {
+  unitAnswers[uid]['fb_' + qi] = val.trim().toLowerCase();
+}
+
+function rarrClickWord(uid, qi, wi) {
+  const btn = document.getElementById(uid + '-rw-' + qi + '-' + wi);
+  if (!btn || btn.classList.contains('used') || btn.classList.contains('disabled')) return;
+  rarrPlaced[uid][qi].push({ wi: wi, word: QUIZ_DATA[uid].rearr[qi].words[wi] });
+  btn.classList.add('used');
+  updateRarrArea(uid, qi);
+}
+
+function rarrClickAnswer(event, uid, qi) {
+  // Find clicked placed word
+  const target = event.target;
+  if (!target.classList.contains('rearr-placed') || target.classList.contains('disabled')) return;
+  const idx = parseInt(target.getAttribute('data-idx'));
+  const placed = rarrPlaced[uid][qi];
+  if (isNaN(idx) || idx < 0 || idx >= placed.length) return;
+  const removed = placed.splice(idx, 1)[0];
+  // Re-enable the source button
+  const srcBtn = document.getElementById(uid + '-rw-' + qi + '-' + removed.wi);
+  if (srcBtn) srcBtn.classList.remove('used');
+  updateRarrArea(uid, qi);
+}
+
+function updateRarrArea(uid, qi) {
+  const area = document.getElementById(uid + '-ra-' + qi);
+  if (!area) return;
+  const placed = rarrPlaced[uid][qi];
+  area.innerHTML = placed.map((p, i) =>
+    '<span class="rearr-placed" data-idx="' + i + '">' + escHtml(p.word) + '</span>'
+  ).join('');
+}
+
+// ===== SUBMIT QUIZ =====
+function submitQuiz(uid) {
+  const mcData = QUIZ_DATA[uid].mc;
+  const fbData = QUIZ_DATA[uid].fb;
+  const rarrData = QUIZ_DATA[uid].rearr;
+  let correct = 0;
+  const total = mcData.length + fbData.length + rarrData.length; // 10+5+3=18
+  const newWrong = [];
+
+  // Grade MC
+  mcData.forEach((q, qi) => {
+    const userAns = unitAnswers[uid]['mc_' + qi];
+    const isCorrect = userAns === q.ans;
+    if (isCorrect) correct++;
+    // Render feedback
+    q.opts.forEach((opt, oi) => {
+      const el = document.getElementById(uid + '-mc-' + qi + '-' + oi);
+      if (!el) return;
+      el.classList.add('disabled');
+      if (oi === q.ans) el.classList.add('correct');
+      else if (oi === userAns && !isCorrect) el.classList.add('wrong');
+    });
+    if (!isCorrect) {
+      newWrong.push({
+        unit: QUIZ_DATA[uid].name,
+        type: '选择题',
+        q: q.q,
+        correctAns: q.opts[q.ans],
+        yourAns: userAns !== undefined ? q.opts[userAns] : '未作答'
+      });
+    }
+  });
+
+  // Grade FB
+  fbData.forEach((q, qi) => {
+    const inp = document.getElementById(uid + '-fb-inp' + qi);
+    const userVal = inp ? inp.value.trim().toLowerCase() : '';
+    const correctVal = q.ans.toLowerCase();
+    const isCorrect = userVal === correctVal;
+    if (isCorrect) correct++;
+    if (inp) {
+      inp.classList.add('disabled');
+      inp.readOnly = true;
+      inp.classList.add(isCorrect ? 'correct' : 'wrong');
+      if (!isCorrect) inp.value = inp.value + ' (✓ ' + q.ans + ')';
+    }
+    if (!isCorrect) {
+      newWrong.push({
+        unit: QUIZ_DATA[uid].name,
+        type: '填空题',
+        q: q.q,
+        correctAns: q.ans,
+        yourAns: userVal || '未作答'
+      });
+    }
+  });
+
+  // Grade Rearr
+  rarrData.forEach((q, qi) => {
+    const placed = rarrPlaced[uid][qi];
+    const sentence = placed.map(p => p.word).join(' ') + '.';
+    const isCorrect = sentence.toLowerCase() === q.ans.toLowerCase();
+    if (isCorrect) correct++;
+    const area = document.getElementById(uid + '-ra-' + qi);
+    const hint = document.getElementById(uid + '-rh-' + qi);
+    if (area) {
+      area.classList.add(isCorrect ? 'correct-bg' : 'wrong-bg');
+      // Disable clicking placed words
+      area.querySelectorAll('.rearr-placed').forEach(el => el.classList.add('disabled'));
+    }
+    // Disable source word buttons
+    q.words.forEach((w, wi) => {
+      const btn = document.getElementById(uid + '-rw-' + qi + '-' + wi);
+      if (btn) btn.classList.add('disabled');
+    });
+    if (hint) hint.textContent = isCorrect ? '✅ 正确！' : '❌ 正确答案：' + q.ans;
+    if (!isCorrect) {
+      newWrong.push({
+        unit: QUIZ_DATA[uid].name,
+        type: '句型排列',
+        q: '排列：' + q.words.join(' / '),
+        correctAns: q.ans,
+        yourAns: sentence
+      });
+    }
+  });
+
+  // Disable submit button
+  const submitBtn = document.querySelector('#quiz-' + uid + ' .quiz-submit-btn');
+  if (submitBtn) submitBtn.disabled = true;
+
+  // Update high score
+  const pct = Math.round((correct / total) * 100);
+  if (!quizState.highScores[uid] || pct > quizState.highScores[uid]) {
+    quizState.highScores[uid] = pct;
+  }
+
+  // Add to wrong book
+  if (!quizState.wrongBook) quizState.wrongBook = [];
+  newWrong.forEach(w => quizState.wrongBook.push(w));
+  // Limit wrongBook to 50 items
+  if (quizState.wrongBook.length > 50) quizState.wrongBook = quizState.wrongBook.slice(-50);
+  saveQuizState(quizState);
+
+  // Show result
+  const resultBar = document.getElementById(uid + '-result');
+  if (resultBar) {
+    resultBar.classList.add('show');
+    const scoreEmoji = pct >= 90 ? '🏆' : pct >= 70 ? '⭐' : pct >= 50 ? '💪' : '📖';
+    resultBar.innerHTML =
+      '<div class="quiz-score-text">' + scoreEmoji + ' 本次得分：<span class="score-num">' + correct + '/' + total + '</span> (' + pct + '%)</div>' +
+      '<div class="quiz-highscore">🥇 最高分：' + (quizState.highScores[uid] || pct) + '%</div>' +
+      '<div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width:' + pct + '%"></div></div>' +
+      '<button class="quiz-retry-btn" onclick="retryQuiz(\'' + uid + '\')">🔄 重新作答 Retry</button>';
+  }
+
+  renderWrongBook();
+}
+
+// ===== RETRY =====
+function retryQuiz(uid) {
+  unitAnswers[uid] = {};
+  rarrPlaced[uid] = {};
+  renderUnit(uid);
+  const resultBar = document.getElementById(uid + '-result');
+  if (resultBar) resultBar.classList.remove('show');
+  const submitBtn = document.querySelector('#quiz-' + uid + ' .quiz-submit-btn');
+  if (submitBtn) submitBtn.disabled = false;
+}
+
+// ===== SWITCH UNIT =====
+function switchQuizUnit(uid, btn) {
+  document.querySelectorAll('.quiz-unit-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.quiz-unit-btn').forEach(b => b.classList.remove('active'));
+  const panel = document.getElementById('quiz-' + uid);
+  if (panel) panel.classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+
+// ===== WRONG BOOK =====
+function renderWrongBook() {
+  const container = document.getElementById('wrongbook-list');
+  if (!container) return;
+  const wb = quizState.wrongBook || [];
+  if (wb.length === 0) {
+    container.innerHTML = '<div class="wrongbook-empty">暂无错题，继续加油！No wrong answers yet! 🎉</div>';
+    return;
+  }
+  // Show last 20
+  const show = wb.slice(-20).reverse();
+  container.innerHTML = show.map(item =>
+    '<div class="wrongbook-item">' +
+    '<div class="wb-unit">[' + escHtml(item.unit) + ' · ' + escHtml(item.type) + ']</div>' +
+    '<div class="wb-q">❓ ' + escHtml(item.q) + '</div>' +
+    '<div class="wb-correct">✅ 正确答案：' + escHtml(item.correctAns) + ' &nbsp;|&nbsp; 你的答案：' + escHtml(item.yourAns || '未作答') + '</div>' +
+    '</div>'
+  ).join('');
+}
+
+function clearWrongBook() {
+  if (confirm('确定清空错题本吗？\nClear all wrong answers?')) {
+    quizState.wrongBook = [];
+    saveQuizState(quizState);
+    renderWrongBook();
+  }
+}
+
+// ===== HELPERS =====
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  state = loadState();
+  quizState = loadQuizState();
+  initRender();
+  renderAllQuiz();
+});
+</script>
+</body>
+</html>
