@@ -509,6 +509,31 @@
 
   .tab-btn:nth-child(6).active { background: #667eea; color: white; }
 </style>
+
+  /* ===== TTS 朗读按钮 ===== */
+  .speak-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    padding: 2px 5px;
+    border-radius: 6px;
+    transition: background 0.15s;
+    vertical-align: middle;
+    line-height: 1;
+    color: #4a90d9;
+    margin-left: 4px;
+  }
+  .speak-btn:hover { background: #e8f0fe; }
+  .speak-btn.speaking { color: #ff6b6b; animation: pulse 0.6s infinite alternate; }
+  @keyframes pulse { from { transform: scale(1); } to { transform: scale(1.25); } }
+  .word-front { position: relative; }
+  .word-front .speak-btn { position: absolute; top: 6px; right: 6px; font-size: 1em; }
+  .sentence-en { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; }
+
 </style>
 </head>
 <body>
@@ -836,7 +861,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">vacation</div>
+            <div class="word-en">vacation</div><button class="speak-btn" onclick="event.stopPropagation();speakText('vacation',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/vəˈkeɪʃən/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -849,7 +874,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">beach</div>
+            <div class="word-en">beach</div><button class="speak-btn" onclick="event.stopPropagation();speakText('beach',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/biːtʃ/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -862,7 +887,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">wonderful</div>
+            <div class="word-en">wonderful</div><button class="speak-btn" onclick="event.stopPropagation();speakText('wonderful',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈwʌndəfl/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -875,7 +900,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">meaningful</div>
+            <div class="word-en">meaningful</div><button class="speak-btn" onclick="event.stopPropagation();speakText('meaningful',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈmiːnɪŋfl/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -888,7 +913,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">helmet</div>
+            <div class="word-en">helmet</div><button class="speak-btn" onclick="event.stopPropagation();speakText('helmet',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈhelmɪt/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -901,7 +926,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">follow</div>
+            <div class="word-en">follow</div><button class="speak-btn" onclick="event.stopPropagation();speakText('follow',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈfɒləʊ/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -914,7 +939,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">rule</div>
+            <div class="word-en">rule</div><button class="speak-btn" onclick="event.stopPropagation();speakText('rule',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ruːl/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -927,7 +952,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">daytime</div>
+            <div class="word-en">daytime</div><button class="speak-btn" onclick="event.stopPropagation();speakText('daytime',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈdeɪtaɪm/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -940,7 +965,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">university</div>
+            <div class="word-en">university</div><button class="speak-btn" onclick="event.stopPropagation();speakText('university',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˌjuːnɪˈvɜːsəti/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -953,7 +978,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">fall off</div>
+            <div class="word-en">fall off</div><button class="speak-btn" onclick="event.stopPropagation();speakText('fall off',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/fɔːl ɒf/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -973,7 +998,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">stomachache</div>
+            <div class="word-en">stomachache</div><button class="speak-btn" onclick="event.stopPropagation();speakText('stomachache',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈstʌməkeɪk/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -986,7 +1011,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">advice</div>
+            <div class="word-en">advice</div><button class="speak-btn" onclick="event.stopPropagation();speakText('advice',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ədˈvaɪs/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -999,7 +1024,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">danger</div>
+            <div class="word-en">danger</div><button class="speak-btn" onclick="event.stopPropagation();speakText('danger',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈdeɪndʒə/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1012,7 +1037,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">safety</div>
+            <div class="word-en">safety</div><button class="speak-btn" onclick="event.stopPropagation();speakText('safety',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈseɪfti/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1025,7 +1050,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">firefighter</div>
+            <div class="word-en">firefighter</div><button class="speak-btn" onclick="event.stopPropagation();speakText('firefighter',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈfaɪəfaɪtə/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1038,7 +1063,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">stranger</div>
+            <div class="word-en">stranger</div><button class="speak-btn" onclick="event.stopPropagation();speakText('stranger',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈstreɪndʒə/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1051,7 +1076,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">building</div>
+            <div class="word-en">building</div><button class="speak-btn" onclick="event.stopPropagation();speakText('building',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈbɪldɪŋ/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1064,7 +1089,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">candle</div>
+            <div class="word-en">candle</div><button class="speak-btn" onclick="event.stopPropagation();speakText('candle',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈkændl/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1077,7 +1102,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">cover</div>
+            <div class="word-en">cover</div><button class="speak-btn" onclick="event.stopPropagation();speakText('cover',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈkʌvə/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1090,7 +1115,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">secret</div>
+            <div class="word-en">secret</div><button class="speak-btn" onclick="event.stopPropagation();speakText('secret',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈsiːkrɪt/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1110,7 +1135,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">technology</div>
+            <div class="word-en">technology</div><button class="speak-btn" onclick="event.stopPropagation();speakText('technology',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/tekˈnɒlədʒi/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1123,7 +1148,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">communication</div>
+            <div class="word-en">communication</div><button class="speak-btn" onclick="event.stopPropagation();speakText('communication',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/kəˌmjuːnɪˈkeɪʃən/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1136,7 +1161,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">tradition</div>
+            <div class="word-en">tradition</div><button class="speak-btn" onclick="event.stopPropagation();speakText('tradition',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/trəˈdɪʃən/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1149,7 +1174,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">platform</div>
+            <div class="word-en">platform</div><button class="speak-btn" onclick="event.stopPropagation();speakText('platform',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈplætfɔːm/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1162,7 +1187,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">connect</div>
+            <div class="word-en">connect</div><button class="speak-btn" onclick="event.stopPropagation();speakText('connect',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/kəˈnekt/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1175,7 +1200,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">railway</div>
+            <div class="word-en">railway</div><button class="speak-btn" onclick="event.stopPropagation();speakText('railway',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈreɪlweɪ/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1188,7 +1213,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">global</div>
+            <div class="word-en">global</div><button class="speak-btn" onclick="event.stopPropagation();speakText('global',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈɡləʊbəl/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1201,7 +1226,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">machine</div>
+            <div class="word-en">machine</div><button class="speak-btn" onclick="event.stopPropagation();speakText('machine',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/məˈʃiːn/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1214,7 +1239,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">solve</div>
+            <div class="word-en">solve</div><button class="speak-btn" onclick="event.stopPropagation();speakText('solve',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/sɒlv/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1227,7 +1252,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">experience</div>
+            <div class="word-en">experience</div><button class="speak-btn" onclick="event.stopPropagation();speakText('experience',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ɪkˈspɪəriəns/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1247,7 +1272,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">role model</div>
+            <div class="word-en">role model</div><button class="speak-btn" onclick="event.stopPropagation();speakText('role model',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈrəʊl ˌmɒdl/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1260,7 +1285,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">educator</div>
+            <div class="word-en">educator</div><button class="speak-btn" onclick="event.stopPropagation();speakText('educator',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈedʒukeɪtə/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1273,7 +1298,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">musician</div>
+            <div class="word-en">musician</div><button class="speak-btn" onclick="event.stopPropagation();speakText('musician',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/mjuːˈzɪʃən/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1286,7 +1311,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">scientist</div>
+            <div class="word-en">scientist</div><button class="speak-btn" onclick="event.stopPropagation();speakText('scientist',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈsaɪəntɪst/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1299,7 +1324,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">proud</div>
+            <div class="word-en">proud</div><button class="speak-btn" onclick="event.stopPropagation();speakText('proud',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/praʊd/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1312,7 +1337,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">national anthem</div>
+            <div class="word-en">national anthem</div><button class="speak-btn" onclick="event.stopPropagation();speakText('national anthem',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈnæʃənl ˈænθəm/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1325,7 +1350,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">collection</div>
+            <div class="word-en">collection</div><button class="speak-btn" onclick="event.stopPropagation();speakText('collection',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/kəˈlekʃən/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1338,7 +1363,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">vaccine</div>
+            <div class="word-en">vaccine</div><button class="speak-btn" onclick="event.stopPropagation();speakText('vaccine',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈvæksiːn/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1351,7 +1376,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">patient</div>
+            <div class="word-en">patient</div><button class="speak-btn" onclick="event.stopPropagation();speakText('patient',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/ˈpeɪʃənt/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1364,7 +1389,7 @@
       <div class="word-card" onclick="flipCard(this)">
         <div class="word-card-inner">
           <div class="word-front">
-            <div class="word-en">worth</div>
+            <div class="word-en">worth</div><button class="speak-btn" onclick="event.stopPropagation();speakText('worth',this)" title="朗读单词">🔊</button>
             <div class="word-phonetic">/wɜːθ/</div>
             <div class="flip-hint">👆 点击翻转 flip</div>
           </div>
@@ -1386,22 +1411,22 @@
   <div class="section-subtitle">🏖️ Unit 1 — 暑假故事 Summer Vacation</div>
   <div class="sentences-grid">
     <div class="sentence-card">
-      <div class="sentence-en">❓ How was your summer vacation?</div>
+      <div class="sentence-en">❓ How was your summer vacation?<button class="speak-btn" onclick="speakText('How was your summer vacation?',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">你的暑假怎么样？</div>
       <div class="sentence-example">→ It was wonderful! / It was meaningful!</div>
     </div>
     <div class="sentence-card">
-      <div class="sentence-en">❓ Where did you go?</div>
+      <div class="sentence-en">❓ Where did you go?<button class="speak-btn" onclick="speakText('Where did you go?',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">你去哪里了？</div>
       <div class="sentence-example">→ I went to Beijing. / I went to the beach.</div>
     </div>
     <div class="sentence-card">
-      <div class="sentence-en">❓ How did you get there?</div>
+      <div class="sentence-en">❓ How did you get there?<button class="speak-btn" onclick="speakText('How did you get there?',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">你是怎么去那里的？</div>
       <div class="sentence-example">→ By train. / By bus. / On foot. / By plane.</div>
     </div>
     <div class="sentence-card">
-      <div class="sentence-en">❓ What did you do there?</div>
+      <div class="sentence-en">❓ What did you do there?<button class="speak-btn" onclick="speakText('What did you do there?',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">你在那里做了什么？</div>
       <div class="sentence-example">→ I visited the Great Wall. / I swam in the sea.</div>
     </div>
@@ -1410,22 +1435,22 @@
   <div class="section-subtitle" style="margin-top:28px;">🚑 Unit 2 — 安全与健康 Safety & Health</div>
   <div class="sentences-grid">
     <div class="sentence-card">
-      <div class="sentence-en">✅ We should wear a helmet when we ride a bike.</div>
+      <div class="sentence-en">✅ We should wear a helmet when we ride a bike.<button class="speak-btn" onclick="speakText('We should wear a helmet when we ride a bike.',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">骑自行车时我们应该戴头盔。</div>
       <div class="sentence-example">We should / We shouldn't + 动词原形</div>
     </div>
     <div class="sentence-card">
-      <div class="sentence-en">💡 It's better to call 119 in a fire.</div>
+      <div class="sentence-en">💡 It's better to call 119 in a fire.<button class="speak-btn" onclick="speakText('It\'s better to call 119 in a fire.',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">火灾时最好拨打119。</div>
       <div class="sentence-example">It's better to + 动词原形</div>
     </div>
     <div class="sentence-card">
-      <div class="sentence-en">😷 I have a stomachache / toothache / headache.</div>
+      <div class="sentence-en">😷 I have a stomachache / toothache / headache.<button class="speak-btn" onclick="speakText('😷 I have a stomachache',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">我胃痛 / 牙痛 / 头痛。</div>
       <div class="sentence-example">I have a + 疾病名称</div>
     </div>
     <div class="sentence-card">
-      <div class="sentence-en">🤝 How can I help you?</div>
+      <div class="sentence-en">🤝 How can I help you?<button class="speak-btn" onclick="speakText('🤝 How can I help you?',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">我能帮你什么？</div>
       <div class="sentence-example">→ You should rest and drink more water.</div>
     </div>
@@ -1434,17 +1459,17 @@
   <div class="section-subtitle" style="margin-top:28px;">🚂 Unit 3 — 科技与生活 Technology & Life</div>
   <div class="sentences-grid">
     <div class="sentence-card">
-      <div class="sentence-en">🌐 Technology is changing our communication / learning.</div>
+      <div class="sentence-en">🌐 Technology is changing our communication / learning.<button class="speak-btn" onclick="speakText('🌐 Technology is changing our communication',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">科技正在改变我们的通信方式 / 学习方式。</div>
       <div class="sentence-example">Technology is changing + 名词</div>
     </div>
     <div class="sentence-card">
-      <div class="sentence-en">⏳ In the past, people wrote letters. Now, people send emails.</div>
+      <div class="sentence-en">⏳ In the past, people wrote letters. Now, people send emails.<button class="speak-btn" onclick="speakText('⏳ In the past, people wrote letters. Now, people send emails.',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">过去，人们写信。现在，人们发电子邮件。</div>
       <div class="sentence-example">In the past... Now...</div>
     </div>
     <div class="sentence-card">
-      <div class="sentence-en">🚄 The Qinghai-Xizang Railway went into service in 2006.</div>
+      <div class="sentence-en">🚄 The Qinghai-Xizang Railway went into service in 2006.<button class="speak-btn" onclick="speakText('🚄 The Qinghai-Xizang Railway went into service in 2006.',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">青藏铁路于2006年建成通车。</div>
       <div class="sentence-example">went into service = 开始运营</div>
     </div>
@@ -1453,22 +1478,22 @@
   <div class="section-subtitle" style="margin-top:28px;">🌟 Unit 5 — 名人榜样 Role Models</div>
   <div class="sentences-grid">
     <div class="sentence-card">
-      <div class="sentence-en">⭐ He / She is famous for his/her achievements.</div>
+      <div class="sentence-en">⭐ He / She is famous for his/her achievements.<button class="speak-btn" onclick="speakText('⭐ He',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">他/她以成就而闻名。</div>
       <div class="sentence-example">be famous for + 名词/动名词</div>
     </div>
     <div class="sentence-card">
-      <div class="sentence-en">💫 He / She is famous because he/she worked hard.</div>
+      <div class="sentence-en">💫 He / She is famous because he/she worked hard.<button class="speak-btn" onclick="speakText('💫 He',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">他/她因为努力工作而出名。</div>
       <div class="sentence-example">be famous because + 句子</div>
     </div>
     <div class="sentence-card">
-      <div class="sentence-en">🙌 He / She is my role model.</div>
+      <div class="sentence-en">🙌 He / She is my role model.<button class="speak-btn" onclick="speakText('🙌 He',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">他/她是我的榜样。</div>
       <div class="sentence-example">用你心中的榜样代替 He/She！</div>
     </div>
     <div class="sentence-card">
-      <div class="sentence-en">🌈 I want to be a scientist like him / her.</div>
+      <div class="sentence-en">🌈 I want to be a scientist like him / her.<button class="speak-btn" onclick="speakText('🌈 I want to be a scientist like him',this)" title="朗读句子">🔊</button></div>
       <div class="sentence-cn">我想像他/她一样成为一名科学家。</div>
       <div class="sentence-example">I want to be + 职业 + like him/her</div>
     </div>
@@ -2292,6 +2317,31 @@ document.addEventListener('DOMContentLoaded', () => {
   initRender();
   renderAllQuiz();
 });
+
+  // ===== TTS 朗读功能 =====
+  let ttsCurrentBtn = null;
+  function speakText(text, btn) {
+    if (!window.speechSynthesis) { alert('您的浏览器不支持语音朗读'); return; }
+    window.speechSynthesis.cancel();
+    if (ttsCurrentBtn) { ttsCurrentBtn.classList.remove('speaking'); ttsCurrentBtn.textContent = '🔊'; }
+    const utt = new SpeechSynthesisUtterance(text);
+    utt.lang = 'en-US';
+    utt.rate = 0.85;
+    utt.pitch = 1;
+    // 优先选英文女声
+    const voices = window.speechSynthesis.getVoices();
+    const enVoice = voices.find(v => v.lang.startsWith('en') && v.name.includes('Female'))
+                 || voices.find(v => v.lang === 'en-US')
+                 || voices.find(v => v.lang.startsWith('en'));
+    if (enVoice) utt.voice = enVoice;
+    if (btn) { btn.classList.add('speaking'); btn.textContent = '🔉'; ttsCurrentBtn = btn; }
+    utt.onend = () => { if (btn) { btn.classList.remove('speaking'); btn.textContent = '🔊'; } ttsCurrentBtn = null; };
+    utt.onerror = () => { if (btn) { btn.classList.remove('speaking'); btn.textContent = '🔊'; } ttsCurrentBtn = null; };
+    window.speechSynthesis.speak(utt);
+  }
+  // 页面加载后预热语音引擎
+  window.speechSynthesis && window.speechSynthesis.getVoices();
+
 </script>
 </body>
 </html>
